@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Любимой Mommy) </title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            color: #e60000;
+        }
+        p {
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1; /* Помещаем сердечки за текстом */
+        }
+        .heart-emoji {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff4e50, #f9d423, #4caf50, #43a047);
+            background-size: 400% 400%;
+            animation: gradient 4s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .background-emojis {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2; /* Помещаем эмодзи за сердечками */
+        }
+
+        .emoji {
+            font-size: 30px;
+            position: absolute;
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="background-emojis">
+        <span class="emoji" style="top: 10%; left: 10%;">❤️</span>
+        <span class="emoji" style="top: 20%; left: 30%;">💖</span>
+        <span class="emoji" style="top: 40%; left: 70%;">💕</span>
+        <!-- Добавьте другие эмодзи и расположения, если нужно -->
+    </div>
+    <h1>Дорогая Mommy</h1>
+    <p>Хочется сказать тебе, что ты очень классная. Я очень рад что удалось тебя найти в trashpack под названием Дайвинчик❤️</p>
+    <img src="mommytwo.jpg" alt="Валентинка">
+    <p>На данный момент ты одна из самых близких мне людей, ты супер милая и классная, с тобой приятно общаться. У тебя ангельский голос - я уже в него влюблен если честно. </p>
+    <p>Спасибо что ты есть, я очень рад нашему знакомству. Я надеюсь что наше общение перерастёт во что-то большее</p>
+    <p>С любовью, твой милый котик</p>
+
+    <script>
+        // Добавляем анимированные сердечки на страницу
+        const heartsContainer = document.querySelector('.hearts');
+        for (let i = 0; i < 200; i++) { // Увеличили количество сердечек до 200
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = Math.random() * 2 + 1 + 's' ;
+            heartsContainer.appendChild(heart);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            color: #e60000;
+        }
+        p {
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1; /* Помещаем сердечки за текстом */
+        }
+        .heart-emoji {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff4e50, #f9d423, #4caf50, #43a047);
+            background-size: 400% 400%;
+            animation: gradient 4s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .background-emojis {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2; /* Помещаем эмодзи за сердечками */
+        }
+
+        .emoji {
+            font-size: 30px;
+            position: absolute;
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+ 
